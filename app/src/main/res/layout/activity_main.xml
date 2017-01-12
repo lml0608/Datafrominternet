@@ -48,6 +48,7 @@
     <!--COMPLETED (15) Set the width to wrap_content and the height to wrap_content-->
     <!--COMPLETED (16) Give the TextView a top margin of 8dp-->
     <!--COMPLETED (17) Set the text to tell the user their search URL will show up here when they click search-->
+
     <TextView
         android:id="@+id/tv_url_display"
         android:layout_width="wrap_content"
@@ -59,21 +60,46 @@
     <!--COMPLETED (18) Add a ScrollView-->
     <!--COMPLETED (19) Set the width to match_parent and the height to wrap_content-->
     <!--COMPLETED (20) Set the top margin to 16dp-->
-    <ScrollView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_height="match_parent">
 
-        <!--COMPLETED (21) Within the ScrollView, add a TextView-->
-        <!--COMPLETED (22) Give the TextView an id of @+id/tv_github_search_results_json-->
-        <!--COMPLETED (23) Set the text size to 18sp-->
-        <!--COMPLETED (24) Set the height and width to wrap_content-->
-        <!--COMPLETED (25) Set the text to something that tells the user to make a search-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <!--COMPLETED (21) Within the ScrollView, add a TextView-->
+            <!--COMPLETED (22) Give the TextView an id of @+id/tv_github_search_results_json-->
+            <!--COMPLETED (23) Set the text size to 18sp-->
+            <!--COMPLETED (24) Set the height and width to wrap_content-->
+            <!--COMPLETED (25) Set the text to something that tells the user to make a search-->
+            <TextView
+                android:id="@+id/tv_github_search_results_json"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Make a search!"
+                android:textSize="18sp" />
+        </ScrollView>
+
+
         <TextView
-            android:id="@+id/tv_github_search_results_json"
+            android:id="@+id/tv_error_message_display"
+            android:textSize="22sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Make a search!"
-            android:textSize="18sp" />
-    </ScrollView>
+            android:padding="16dp"
+            android:text="@string/error_message"
+            android:visibility="invisible"/>
+        
+        <ProgressBar
+            android:id="@+id/pd_loading_indicator"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            android:visibility="invisible"/>
+
+
+    </FrameLayout>
+
 </LinearLayout>
